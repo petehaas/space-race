@@ -1,0 +1,10 @@
+vocab(RocketId) {
+  "falcon 1"
+  "falcon1"
+  "falcon 9"
+  "falcon9"
+  "falcon heavy"
+  "falconheavy"
+  "starship"
+  "star ship"
+}

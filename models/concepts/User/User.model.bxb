@@ -1,0 +1,17 @@
+structure (User) {
+  property (previousUser) {
+    description (Has this user been here before)
+    type (PreviousUser)
+    min (Required)
+    max (One)
+  }
+
+  property (numberOfTurns) {
+    description (How many dialog turns has the user taken)
+    type (NumberOfTurns)
+    min (Required)
+    max (One)
+  }
+
+
+}

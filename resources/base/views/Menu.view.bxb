@@ -1,0 +1,118 @@
+result-view {
+  match: UserContext (this) {
+    from-output: GetMenu (action)
+  }
+
+  refresh {
+    if (this.user.numberOfTurns == 1) {
+      spec {
+        delay-seconds (14)
+        with-request {
+          intent {
+            goal: GetMenu
+          }
+        }
+      }
+    }
+  }
+
+  message {
+    template-macro (menu) {
+      param (numberOfTurns) {
+        expression (this.user.numberOfTurns)
+      }
+      param (earcon) {
+        if (this.user.numberOfTurns == 1) {
+          literal (https://petehaas.s3.amazonaws.com/audio/Bixby/Spacex/Launch-Welcome.wav)
+        }
+        else {
+          literal (https://petehaas.s3.amazonaws.com/audio/Bixby/Spacex/Menu-Earcon.wav)
+        }
+      }
+    }
+  }
+
+  conversation-drivers {
+
+    conversation-driver {
+      choose (Random) {
+        template ("List launches last year")
+        template ("Show launches this year")
+        template ("Tell me about the Falcon9 rocket")
+        template (Information about the new Starship)
+        template ("Learn about the new Starship spacecraft")
+        template ("Tell me about the new Starship spacecraft")
+        template ("Falcon Heavy rocket")
+        template ("Tell me about SpaceX")
+        template ("Falcon heavy launches")
+      }
+    }
+
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          if (this.user.numberOfTurns == 1) {
+            image {
+              url ("https://live.staticflickr.com/4530/24407867168_0eb5965362_k.jpg")
+              aspect-ratio (Nine_Sixteen)
+            }
+
+          }
+          for-each (this.menuItems) {
+            as (menuItem) {
+              thumbnail-card {
+                on-click {
+                  if (menuItem.title == 'Launches') {
+                    intent {
+                      goal: Launch
+                    }
+                  }
+                  else-if (menuItem.title == 'Rockets') {
+                    intent {
+                      goal: Rocket
+                    }
+                  }
+                  else-if (menuItem.title == 'Capsules') {
+                    intent {
+                      goal: Capsule
+                    }
+                  }
+                  else {
+                    intent {
+                      goal: Info
+                    }
+                  }
+                }
+                image-url ("#{value(menuItem.image)}")
+                title-area {
+                  slot1 {
+                    single-line {
+                      text {
+                        value ("#{value(menuItem.title)}")
+                      }
+                    }
+                  }
+                  slot2 {
+                    paragraph {
+                      value ("#{value(menuItem.description)}")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                }
+
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+}

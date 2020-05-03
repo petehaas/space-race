@@ -1,0 +1,10 @@
+train (t-r0mati2zacvgzh4qjc24p7gb7) {
+  utterance ("[g:Rocket:continue:Launch] Tell me about the (falcon9)[v:RocketId]")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWGQwZRxTy2BSBYzSOHS55nCwMTACMQMQJKRAQSYIBgA)
+  last-modified (1586893159425)
+}
+train (t-rj7fkp3dx9n04jf9kv3ctd1em) {
+  utterance ("[g:Launch] (falcon 9)[v:RocketId] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgE5Sdnp5Z4pjAwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587515571386)
+}

@@ -1,0 +1,6 @@
+structure (LaunchDate) {
+  role-of (time.DateTimeExpression)
+  features {
+    transient
+  }
+}

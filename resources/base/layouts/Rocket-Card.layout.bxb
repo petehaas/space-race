@@ -1,0 +1,127 @@
+layout-macro-def (rocket-card) {
+  params {
+    param (rocket) {
+      type (Rocket)
+    }
+  }
+
+  content {
+    compound-card {
+      content {
+        thumbnail-card {
+          image-position (Start)
+          image-size (Medium)
+          image-url {
+            if (exists(rocket.images[0].url)) {
+              template ("#{value(rocket.images[0].url)}")
+            }
+          }
+          title-area {
+            halign (Center)
+            slot2 {
+              if (exists(rocket.name)) {
+                paragraph {
+                  value ("#{value(rocket.name)}")
+                  style (Title_L)
+                }
+
+              }
+              else {
+                paragraph()
+              }
+            }
+            slot3 {
+              if (exists(rocket.active) && rocket.active) {
+                single-line {
+                  text {
+                    value ("Active")
+                    color (Green)
+                    style (Detail_M)
+                  }
+                }
+              }
+              else {
+                single-line {
+                  text {
+                    value ("Not Active")
+                    style (Detail_M)
+                  }
+                }
+              }
+            }
+          }
+        }
+        divider
+        hbox {
+          content {
+            vbox {
+              content {
+                single-line {
+                  text {
+                    value ("First Launch")
+                    style (Detail_M_Soft)
+                  }
+                }
+                if (exists(rocket.year)) {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.year)}")
+                    }
+                  }
+                }
+                else {
+                  single-line {
+                    spacer
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              content {
+                single-line {
+                  text {
+                    value ("Success Rate")
+                    style (Detail_M_Soft)
+                  }
+                }
+                if (exists(rocket.successRate) && rocket.successRate > 0) {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.successRate)}%")
+                    }
+                  }
+                }
+                else {
+                  single-line {
+                    text {
+                      value ("N/A")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              content {
+                single-line {
+                  text {
+                    value ("Cost per Launch")
+                    style (Detail_M_Soft)
+                  }
+                }
+                if (exists(rocket.costPerLaunch)) {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.costPerLaunch)}M")
+
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        }
+      }
+    } // compound-card
+  }
+}

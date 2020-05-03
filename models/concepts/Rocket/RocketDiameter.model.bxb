@@ -1,0 +1,14 @@
+structure (RocketDiameter) {
+ 
+  property (meters) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+
+  property (feet) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+}

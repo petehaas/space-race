@@ -1,0 +1,4 @@
+action (GetLaunchSites) {
+  type(Search)
+  output (LaunchSite)
+}

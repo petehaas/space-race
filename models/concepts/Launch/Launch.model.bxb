@@ -1,0 +1,84 @@
+structure (Launch) {
+  property (id) {
+    type (FlightNumber)
+    min (Required)
+    max (One)
+  }
+  property (name) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+  property (details) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+  property (upcoming) {
+    type (viv.core.Boolean)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (launchDate) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (rocket) {
+    type (Rocket)
+    min (Optional)
+    max (One)
+  }
+
+  property (success) {
+    type (viv.core.Boolean)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (reasonForFailure) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (videoLink) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (images) {
+    type (viv.core.BaseImage)
+    min (Required)
+    max (Many)
+    visibility (Private)
+  }
+
+  property (wikiLink) {
+    type (viv.core.Text)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+  property (latest) {
+    type (viv.core.Boolean)
+    min (Required)
+    max (One)
+    visibility (Private)
+  }
+
+
+
+
+}

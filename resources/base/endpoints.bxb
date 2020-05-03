@@ -1,0 +1,43 @@
+endpoints {
+ 
+  
+  action-endpoints {
+
+    action-endpoint (GetLaunches) {
+      accepted-inputs (launchId,rocketId,launchDate,upcoming,previous,$vivContext) 
+      local-endpoint (getLaunches.js)
+    }
+    action-endpoint (GetCapsules) {
+      accepted-inputs (capsuleId,$vivContext)
+      local-endpoint (getCapsules.js)
+    }
+    action-endpoint (GetInfo) {
+      accepted-inputs ($vivContext)
+      local-endpoint (getInfo.js)
+    }
+    action-endpoint (GetLaunchSites) {
+      accepted-inputs ($vivContext)
+      local-endpoint (getLaunchSites.js)
+    }
+    action-endpoint (GetRockets) {
+      accepted-inputs (rocketId,launch,$vivContext) 
+      local-endpoint (getRockets.js)
+    }
+    action-endpoint (GetPayloads) {
+      accepted-inputs (payloadId,$vivContext)
+      local-endpoint (getPayloads.js)
+    }
+    action-endpoint (GetEngine) {
+      accepted-inputs (rocket,id,$vivContext)
+      local-endpoint (getEngine.js)
+    }
+     action-endpoint (GetMenu) {
+      accepted-inputs (user,$vivContext)
+      local-endpoint (getMenu.js)
+    }
+    action-endpoint (GetUser) {
+      accepted-inputs (previousUser,numberOfTurns,$vivContext)
+      local-endpoint (getUser.js)
+    }
+  }
+}

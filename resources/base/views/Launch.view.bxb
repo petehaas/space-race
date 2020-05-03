@@ -1,0 +1,97 @@
+result-view {
+  match: Launch (this) {
+    from-output: GetLaunches (action)
+  }
+
+  message {
+    template-macro (launch) {
+      param (launch) {
+        expression (this)
+      }
+      param (searchParms) {
+        expression (action)
+      }
+      param (earcon) {
+        literal (https://petehaas.s3.amazonaws.com/audio/Bixby/Spacex/Launch-Earcon.wav)
+      }
+    }
+  }
+
+  conversation-drivers {
+    if (size(this) == 1) {
+      conversation-driver {
+
+        choose (Random) {
+          template (What rocket was used for the launch?)
+          template (Menu)
+          template ("Tell me more about the [#{value(this.rocket.name)}] rocket")
+          template (Launch sites)
+          template (Where does it launch from?)
+        }
+      }
+
+    }
+
+    else-if (size(this) > 1 && !exists(action.launchDate)) {
+      conversation-driver {
+        choose (Random) {
+          template (Show launches for this year only)
+          template (Filter by this year)
+          template (Show launches using the Falcon9)
+        }
+      }
+    }
+
+    else-if (size(this) > 1) {
+      conversation-driver {
+        choose (Random) {
+          template (Menu)
+          template (Home)
+          template (Main Menu)
+        }
+      }
+    }
+  }
+
+
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        highlights {
+          select (this) {
+            filter-by (this.latest)
+            label (Latest Launch)
+            layout-macro (launch-highlight) {
+              param (launch) {
+                expression (this[0])
+              }
+            }
+          }
+        }
+        where-each (launch) {
+          layout-macro (launch-card) {
+            param (launch) {
+              expression (launch)
+            }
+          }
+        }
+      }
+    }
+    else-if (size(this) == 1) {
+      layout-macro (launch-details) {
+        param (launch) {
+          expression (this)
+        }
+      }
+    }
+    else {
+      layout {
+        section {
+          content {
+            paragraph ("Sorry, I didn't find any results")
+          }
+        }
+      }
+    }
+  }
+}

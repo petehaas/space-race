@@ -1,0 +1,13 @@
+action (GetCapsules) {
+ type(Search)
+
+ collect {
+   input (capsuleId) {
+     type (CapsuleId)
+   }
+
+
+
+ }
+  output (Capsule)
+}

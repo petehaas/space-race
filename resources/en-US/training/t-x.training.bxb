@@ -1,0 +1,5 @@
+train (t-xd1qj0llh77jlyc0o39gcwnlr) {
+  utterance ("[g:Launch] show launches for {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1586807466449)
+}

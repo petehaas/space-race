@@ -1,0 +1,15 @@
+train (t-y313lw8bclajqv34nutffgryu) {
+  utterance ([g:Rocket#costPerLaunch:continue:Rocket] cost per launch)
+  plan (Y2BikC/ISaxML8ovzUvRKy5ITE6t0HPOLy4JSC3ySSzNS85gkMBUEJSfnJ1awsAIhAwMTEAMZgEA)
+  last-modified (1586950463331)
+}
+train (t-y6nrzkwbunwrj2d7wi7sjbmhk) {
+  utterance ("[g:Launch] show all the launches for {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1586914878613)
+}
+train (t-yixfnnrr017dj3xsyegciw3wx) {
+  utterance ("[g:Launch] show launches for {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1587043380985)
+}

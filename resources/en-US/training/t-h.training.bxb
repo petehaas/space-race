@@ -1,0 +1,15 @@
+train (t-h3phr4iw7m4pf68jf8v7nwgv6) {
+  utterance ([g:Info] tell me about spacex)
+  plan (Y2BkEEwuLSpL1SsuSExOrdDzzEvLZwABRhABAA==)
+  last-modified (1587335859955)
+}
+train (t-hbknbk79d6w5xzv1w5sxm58ir) {
+  utterance ("[g:Launch] (upcoming)[v:Upcoming:true] (falcon 9)[v:RocketId] launches")
+  plan (Y2BhEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgE5Sdnp5Z4pqAJhxYk5+dm5qUzMDMwMjABSQYgDYIQAOKDRQE=)
+  last-modified (1587913840244)
+}
+train (t-hlkzu4dy085235g3otapi3utb) {
+  utterance ("[g:Launch] list (previous)[v:Previous:true] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgEFKWWZeaXFjMwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587560806397)
+}

@@ -1,0 +1,81 @@
+result-view {
+  match: Rocket (this)
+
+  message {
+    template-macro (rocket) {
+      param (rocket) {
+        expression (this)
+      }
+      param (earcon) {
+        literal (https://petehaas.s3.amazonaws.com/audio/Bixby/Spacex/Rocket-Earcon.wav)
+      }
+    }
+  }
+
+
+  conversation-drivers {
+    if (size(this) == 1) {
+      conversation-driver {
+        choose (Random) {
+          template (Menu)
+          template (Home)
+          template (Main Menu)
+           template (Launch sites)
+        }
+      }
+
+      conversation-driver {
+        choose (Random) {
+          template (Cost per Launch)
+          template (What's the success rate?)
+          template (How much can it carry?)
+          template (How heavy is it?)
+          template (How tall is it?)
+        }
+      }
+
+
+    }
+    else {
+      conversation-driver {
+        choose (Random) {
+          template (Menu)
+          template (Home)
+          template (Main Menu)
+        }
+      }
+      conversation-driver {
+        choose (Random) {
+          template (Space launches)
+          template (About SpaceX)
+          template (Launch Sites)
+        }
+      }
+    }
+  }
+
+
+  render {
+    if (size(this) > 1) {
+
+      list-of (this) {
+
+        where-each (rocket) {
+
+          layout-macro (rocket-card) {
+            param (rocket) {
+              expression (rocket)
+            }
+          }
+        }
+      }
+    }
+    else-if (size(this) == 1) {
+      layout-macro (rocket-details) {
+        param (rocket) {
+          expression (this)
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+layout-macro-def (engine-details) {
+  params {
+    param (engine) {
+      type (RocketEngine)
+    }
+  }
+
+  content {
+
+    partitioned {
+      content {
+        hbox {
+          
+          content {
+            vbox {
+              halign (Start)
+              grow (3)
+              content {
+                single-line {
+                  text {
+                    value ("Type")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (3)
+              content {
+                single-line {
+                  if (exists(engine.type)) {
+                    text {
+                      value ("#{title(value(engine.type))}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+            hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("Version")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              grow (2)
+              halign (Start)
+              content {
+                single-line {
+                  if (exists(engine.version)) {
+                    text {
+                      value ("#{title(value(engine.version))}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+        hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("Layout")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  if (exists(engine.layout)) {
+                    text {
+                      value ("#{title(value(engine.layout))}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+         hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("Propellant 1")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  if (exists(engine.propellant1)) {
+                    text {
+                      value ("#{title(value(engine.propellant1))}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+        hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("Propellant 2")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  if (exists(engine.propellant2)) {
+                    text {
+                      value ("#{title(value(engine.propellant2))}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+         hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("Thrust to Weight")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  if (exists(engine.thrustToWeight)) {
+                    text {
+                      value ("#{value(engine.thrustToWeight)}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+         hbox {
+          content {
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  text {
+                    value ("# of Engines")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            } // vbox
+            vbox {
+              halign (Start)
+              grow (2)
+              content {
+                single-line {
+                  if (exists(engine.number)) {
+                    text {
+                      value ("#{value(engine.number)}")
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            } // vbox
+          }
+        } // hbox
+      }
+    }
+  }
+}

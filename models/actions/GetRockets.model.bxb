@@ -1,0 +1,14 @@
+action (GetRockets) {
+  type(Search)
+  collect {
+    input (rocketId) {
+      type (RocketId) 
+    }
+    input (launch) {
+     type (Launch)
+     max (One)
+    }
+  }
+  
+  output (Rocket)
+}

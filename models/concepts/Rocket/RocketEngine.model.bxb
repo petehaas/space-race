@@ -1,0 +1,36 @@
+structure (RocketEngine) {
+  property (number) {
+    type (EngineNumber)
+    min (Required) max (One)
+  }
+   property (type) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (version) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+   property (layout) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+   property (propellant1) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (propellant2) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (thrustToWeight) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+}

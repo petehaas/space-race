@@ -1,0 +1,13 @@
+structure (RocketMass) {
+  property (kg) {
+    type (RocketMassKg)
+    min (Required)
+    max (One)
+  }
+
+  property (lb) {
+    type (RocketMassLb)
+    min (Required)
+    max (One)
+  }
+}

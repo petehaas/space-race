@@ -1,0 +1,18 @@
+action (GetEngine) {
+  type(Search)
+  collect {
+    
+    input (rocket) {
+      type (Rocket) 
+      min (Required) max (Many)
+    }
+
+    input (id) {
+      type (EngineNumber)
+      min (Required) max (One)
+    }
+
+  }
+
+  output (RocketEngine)
+}

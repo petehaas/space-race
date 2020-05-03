@@ -1,0 +1,5 @@
+train (t-5x9th2n2picbzla13oy7zj620) {
+  utterance ("[g:Launch] (falcon1)[v:RocketId] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgE5Sdnp5Z4pjAwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587327568688)
+}

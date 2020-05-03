@@ -1,0 +1,17 @@
+structure (RocketStage) {
+  property (reusable) {
+    type (viv.core.Boolean)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (engines) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (fuelAmountTons) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+}

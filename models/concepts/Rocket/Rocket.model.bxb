@@ -1,0 +1,117 @@
+structure (Rocket) {
+ 
+  property (id) {
+    type (RocketId)
+    min (Required) max (One)
+  }
+   property (name) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (type) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+
+  property (description) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (wikiLink) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (images) {
+    type (viv.core.BaseImage)
+    min (Optional) max (Many)
+    visibility (Private)
+  }
+
+  property (firstFlight) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (year) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (successRate) {
+    type (RocketSuccessRate)
+    min (Optional) max (One)
+  }
+
+  property (costPerLaunch) {
+    type (CostPerLaunch)
+    min (Optional) max (One)
+  }
+
+  property (boosters) {
+    type (viv.core.Integer)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (stages) {
+    type (viv.core.Integer)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (active) {
+    type (viv.core.Boolean)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+
+  property (height) {
+    type (RocketHeight)
+    min (Optional) max (One)
+  }
+  property (mass) {
+    type (RocketMass)
+    min (Optional) max (One)
+  }
+   property (diameter) {
+    type (RocketDiameter)
+    min (Optional) max (One)
+  }
+
+   property (payloadWeights) {
+    type (RocketPayloadWeight)
+    min (Optional) max (Many)
+  }
+
+  property (firstStage) {
+    type (RocketFirstStage)
+    min (Optional) max (One)
+  }
+
+  property (secondStage) {
+    type (RocketSecondStage)
+    min (Optional) max (One)
+  }
+
+  property (engine) {
+    type (RocketEngine)
+    min (Optional) max (One)
+  }
+
+
+
+
+
+
+
+
+  
+}

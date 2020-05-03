@@ -1,0 +1,21 @@
+capsule-info {
+  icon-asset (images/icons/rocket-logo-01.png)
+  display-name (Space Race)
+  developer-name (Conversation Curve)
+  website-url (https://conversationcurve.com)
+  description ("Search upcoming SpaceX launches.  Learn about missions, and the most advanced rockets ever created.  Your adventure awaits!")
+  dispatch-name (Space Race)
+  privacy-policy-url (https://conversationcurve.com/privacy.html)
+  search-keywords {
+    keyword (space)
+    keyword (rocket)
+    keyword (launch)
+    keyword (mars)
+    keyword (moon)
+    keyword (astronaut)
+    keyword (dragon)
+    keyword (landing)
+    keyword (orbit)
+    keyword (satellite)
+  }
+}

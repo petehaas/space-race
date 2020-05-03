@@ -1,0 +1,22 @@
+action (GetMenu) {
+  type (Search)
+
+  collect {
+    input (user) {
+      type (User)
+      min (Required) max (One)
+
+      default-init {
+        intent {
+          goal:  GetUser
+        }
+      }
+
+    }
+
+  }
+
+  output (UserContext) {
+    
+  }
+}

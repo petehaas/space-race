@@ -1,0 +1,10 @@
+action (GetPayloads) {
+  type (Search)
+  collect {
+    input (payloadId) {
+      type (PayloadId)
+      min (Optional) max (One)
+    }
+  }
+  output (Payload)
+}

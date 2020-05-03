@@ -1,0 +1,13 @@
+structure (HeadQuarters) {
+ 
+  property (loc) {
+    type (geo.NamedPoint)
+    min (Required) max (One)
+  }
+   property (address) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  
+}

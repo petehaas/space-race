@@ -1,0 +1,43 @@
+structure (Capsule) {
+ 
+  property (id) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (status) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (originalLaunchDate) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (landings) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (type) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (details) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (reuseCount) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (missions) {
+    type (Mission)
+    min (Required) max (Many)
+  }
+
+}

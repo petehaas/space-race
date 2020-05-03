@@ -1,0 +1,10 @@
+train (t-wnqbcgqg3baznhb6njv4evwxy) {
+  utterance ("[g:Launch] list (upcoming)[v:Upcoming:true] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosiEFiTn52bmpTMwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587515537111)
+}
+train (t-wrh2osuu3dmqcnhj02taf7x1c) {
+  utterance ([g:Rocket#payloadWeights:continue:Rocket] How much can it lift)
+  plan (Y2BiUEguLSpL1SsuSExOrdALyk/OTi0JSKzMyU9MCU/NTM8oYRDGooKBEQgZGJiAGMwCAA==)
+  last-modified (1588106082859)
+}

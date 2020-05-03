@@ -1,0 +1,10 @@
+train (t-vfhmdamduvhwq5enqpiwxsqex) {
+  utterance ("[g:Launch] (previous)[v:Previous:true] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgEFKWWZeaXFjMwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587560777034)
+}
+train (t-vuiuiybhewo8eru3o7iab2xxf) {
+  utterance ("[g:Launch] list launches from {[g:LaunchDate] (2008)[v:time.DateTimeExpression]}")
+  plan (Y2BhEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIY1HukliSyiBdllmmV5KZm6oH4oYAGa4VBUWpxcWZ+XkMzAyMDExAkgFMMwJpFiAG8ZkgcgA=)
+  last-modified (1587336194410)
+}

@@ -1,0 +1,30 @@
+train (t-t9p19wufcgls3gw5b98ritzkf) {
+  utterance ([g:UserContext] mission control)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587331137733)
+}
+train (t-te5n9bp1fote9yjwebgdcuz9t) {
+  utterance ("[g:Launch] show launches using the (falcon9)[v:RocketId] rocket")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM0hhSgflJ2enlnimMDAxMAIxA5BkZAABJggGAA==)
+  last-modified (1587043486587)
+}
+train (t-tksf8m7j2i6pmyzl6a73f4w9e) {
+  utterance ([g:Rocket] rockets)
+  plan (Y2BkkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWEAAUYQAQA=)
+  last-modified (1586950421442)
+}
+train (t-tl9xabolsc2dr28oyy6xi0xkx) {
+  utterance ("[g:Rocket] (falcon heavy)[v:RocketId] rocket")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWGQwZRxTy2BSBYzSOHS55nCwMTACMQMQJKRAQSYIBgA)
+  last-modified (1587006651879)
+}
+train (t-tsixwkcla0uusv8nnicde536r) {
+  utterance ([g:Rocket#mass:continue:Rocket] how heavy is it?)
+  plan (Y2BikCnISaxML8ovzUvRKy5ITE6t0AvKT85OLfFNLC5mkMAly8AIhAwMTEAMZgEA)
+  last-modified (1586901263229)
+}
+train (t-tvqxyxt0i7jirmeeew56yipcy) {
+  utterance ("[g:Launch] list launches {[g:LaunchDate] (last year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1587006541570)
+}

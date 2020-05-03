@@ -1,0 +1,10 @@
+train (t-mcfd1y3imx4h2cq5na9hfl77m) {
+  utterance ([g:LaunchSite] spacex launch sites)
+  plan (Y2BkEE8uLSpL1SsuSExOrdDzSSzNS84IzixJZQABRhABAA==)
+  last-modified (1588013615242)
+}
+train (t-mel2jzl7xqoxyoql21q92r188) {
+  utterance ([g:Rocket:continue:Launch] what rocket was used for this launch)
+  plan (Y2BkkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWEAAUYQAQA=)
+  last-modified (1587072525849)
+}

@@ -1,0 +1,301 @@
+result-view {
+  match: Info (this) {
+
+  }
+
+  message {
+    choose (Random) {
+      template ("About SpaceX") {
+        speech ("<speak>SpaceX is building the most advanced rockets in the world.  Their mission is to enable people to live on other planets<audio src=\"https://petehaas.s3.amazonaws.com/audio/Bixby/Earcon2.wav\"></audio></speak>")
+      }
+      template ("Information about SpaceX") {
+         speech ("<speak>It was founded by Elon Musk, who also founded Tesla and Paypal<audio src=\"https://petehaas.s3.amazonaws.com/audio/Bixby/Earcon2.wav\"></audio></speak>")
+      }
+      template ("SpaceX Information") {
+         speech ("<speak>SpaceX is the only private company capable of returning a spacecraft from low Earth orbit, which it first accomplished in 2010<audio src=\"https://petehaas.s3.amazonaws.com/audio/Bixby/Earcon2.wav\"></audio></speak>")
+      }
+      template ("SpaceX") {
+         speech ("<speak>Building on the achievements of Falcon 9 and Falcon Heavy, SpaceX is working on a next generation of fully reusable launch vehicles that will be the most powerful ever built, capable of carrying humans to Mars and other destinations in the solar system<audio src=\"https://petehaas.s3.amazonaws.com/audio/Bixby/Earcon2.wav\"></audio></speak>")
+      }
+    }
+  }
+
+  conversation-drivers {
+    conversation-driver {
+      choose (Random) {
+        template (Menu)
+        template (Home Base)
+        template (Mission Control)
+        template (Show SpaceX launches this year)
+        template (Learn about their rockets)
+        template (Launch sites)
+        template (Show launch sites)
+      }
+    }
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          image {
+            url (images/icons/spacex.jpg)
+          }
+
+          title-area {
+            halign (Center)
+            slot2 {
+              single-line {
+                text {
+                  value ("Founded #{value(this.founded)}")
+                  style (Detail_L_Soft)
+                }
+              }
+            }
+          }
+
+          paragraph {
+            value ("#{value(this.summary)}")
+            style (Detail_L)
+          }
+
+          spacer
+          spacer
+          hbox {
+            content {
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Employees")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value ("#{integer(this.employees)}")
+                      style (Detail_M)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Launch Sites")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value ("#{integer(this.launchSites)}")
+                      style (Detail_M)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Valuation")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  single-line {
+                    text {
+                      value ("$#{value(this.valuation)}B")
+                      style (Detail_M)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          }
+          spacer
+          divider
+          spacer
+          hbox {
+            content {
+              vbox {
+                halign (Start)
+                grow (3)
+                content {
+                  single-line {
+                    text {
+                      value ("Founder")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                grow (2)
+                content {
+                  single-line {
+                    text {
+                      value ("#{this.founder}")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          hbox {
+            content {
+              vbox {
+                halign (Start)
+                grow (3)
+                content {
+                  single-line {
+                    text {
+                      value ("CEO")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                grow (2)
+                content {
+                  single-line {
+                    text {
+                      value ("#{this.ceo}")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          hbox {
+            content {
+              vbox {
+                halign (Start)
+                grow (3)
+                content {
+                  single-line {
+                    text {
+                      value ("COO")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                grow (2)
+                content {
+                  single-line {
+                    text {
+                      value ("#{this.coo}")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          hbox {
+            content {
+              vbox {
+                halign (Start)
+                grow (3)
+                content {
+                  single-line {
+                    text {
+                      value ("CTO")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                grow (2)
+                content {
+                  single-line {
+                    text {
+                      value ("#{this.cto}")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          hbox {
+            content {
+              vbox {
+                halign (Start)
+                grow (3)
+                content {
+                  single-line {
+                    text {
+                      value ("CTO (Propulsion)")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                grow (2)
+                content {
+                  single-line {
+                    text {
+                      value ("#{this.ctoPropulsion}")
+                      style (Detail_L)
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+
+          map-card {
+            zoom (11)
+            title-area {
+              slot2 {
+                single-line {
+                  text {
+                    value ("#{value(this.headQuarters.address)}")
+                  }
+                }
+              }
+            }
+            markers {
+
+              marker {
+                geo (this.headQuarters.loc.point)
+                icon ("/images/icons/rocket-success.png")
+                width (20)
+                height (20)
+                anchor-x (5)
+                anchor-y (15)
+                rotation (0)
+              }
+
+            }
+          }
+
+
+          spacer
+
+          attribution-link {
+            label {
+              template (SpaceX Website)
+            }
+            url {
+              template ("#{value(this.website)}")
+            }
+          }
+        }
+      }
+    }
+  }
+}

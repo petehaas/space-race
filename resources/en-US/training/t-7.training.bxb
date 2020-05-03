@@ -1,0 +1,30 @@
+train (t-70c1vh59cor8epejk5s01yvot) {
+  utterance ("[g:Launch] show launches using the (falcon heavy)[v:RocketId]")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM0hhSgflJ2enlnimMDAxMAIxA5BkZAABJggGAA==)
+  last-modified (1587043690624)
+}
+train (t-7cbxgsj1mdelddisrftqj2hov) {
+  utterance ("[g:Launch] (starship)[v:RocketId] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgE5Sdnp5Z4pjAwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587327465741)
+}
+train (t-7jcj7eq59m9jeiedf823kakpx) {
+  utterance ([g:Info] space x)
+  plan (Y2BkEEwuLSpL1SsuSExOrdDzzEvLZwABRhABAA==)
+  last-modified (1587338174765)
+}
+train (t-7pewzw8i1xfhkxks5d1c5a1av) {
+  utterance ([g:Launch] space launches)
+  plan (Y2BkEE4uLSpL1SsuSExOrdDzSSzNS85gAAFGEAEA)
+  last-modified (1587338374360)
+}
+train (t-7puonlhw2l8peim1179kerr89) {
+  utterance ([g:Launch] launch)
+  plan (Y2BkEE4uLSpL1SsuSExOrdDzSSzNS85gAAFGEAEA)
+  last-modified (1587336108530)
+}
+train (t-7xe4a3qirvmnii5nu49veox7j) {
+  utterance ("[g:Launch] (falcon heavy)[v:RocketId] launches {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BlEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIY1HukliSyiCKIhGUn5ydWuKZwiBdllmmV5KZm6oHUhUCZLhWFBSlFhdn5ucxsDAwMjAxMANpBiALxGZkAAEWKGYGioDVAAA=)
+  last-modified (1587514735057)
+}

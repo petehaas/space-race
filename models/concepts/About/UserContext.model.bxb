@@ -1,0 +1,12 @@
+structure (UserContext) {
+
+  property (user){
+    type (User) 
+    min (Required) max (One)
+  }
+ 
+  property (menuItems) {
+    type (MenuItem)
+    min (Required) max (Many)
+  }
+}

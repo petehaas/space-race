@@ -1,0 +1,165 @@
+template-macro-def (menu) {
+  params {
+    param (numberOfTurns) {
+      type (viv.core.Integer)
+      min(Required) max (One)
+    }
+    param (earcon) {
+      type (viv.core.Text)
+    }
+  }
+  content {
+    if (numberOfTurns == 1) {
+       template (Welcome, looks like your first time) {
+          speech ("[<speak><audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+    }
+    else {
+      choose (Random) {
+        template (Main Menu) {
+           speech ("[<speak>Main Menu<audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template (Here's a menu) {
+           speech ("[<speak>Here's a menu<audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template (Menu) {
+           speech ("[<speak>Menu<audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+      }
+    }
+  }
+}
+template-macro-def (launch) {
+  params {
+    param (launch) {
+      type (Launch)
+      max (Many)
+    }
+    param (searchParms) {
+      type (GetLaunches)
+    }
+    param (earcon) {
+      type (viv.core.Text)
+    }
+  }
+  content {
+    if (size(launch) > 1) {
+
+      if (exists(searchParms.upcoming)) {
+        template (Upcoming launches) {
+          speech ("[<speak>upcoming launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+      }
+      else-if (exists(searchParms.rocketId)) {
+        template ("#{value(searchParms.rocketId)} launches") {
+          speech ("[<speak>#{value(searchParms.rocketId)} launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+      }
+      else-if (exists(searchParms.launchDate)) {
+
+        if (exists(searchParms.launchDate.dateInterval.parseTree.year)) {
+          template ("[#{value(searchParms.launchDate.dateInterval.parseTree.year)}] launches") {
+            speech ("[<speak>[#{value(searchParms.launchDate.dateInterval.parseTree.year)}] launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+        }
+        else-if (exists(searchParms.launchDate.dateInterval)) {
+          template ("Launches [#{value(searchParms.launchDate.dateInterval.offset)}] [#{value(searchParms.launchDate.dateInterval.relNamedDateInterval)}]") {
+            speech ("[<speak>Launches [#{value(searchParms.launchDate.dateInterval.offset)}] [#{value(searchParms.launchDate.dateInterval.relNamedDateInterval)}] <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+        }
+      }
+      else {
+        choose (Random) {
+          template (I found these launches) {
+            speech ("[<speak>I found these launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+          template ("I found #{size(launch)} launches") {
+            speech ("[<speak>I found #{size(launch)} launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+          template ("How about these #{size(launch)} launch") {
+            speech ("[<speak>how about these #{size(launch)} launches <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+          template ("I found #{size(launch)}") {
+            speech ("[<speak>I found #{size(launch)} <audio src=\"#{value(earcon)}\"></audio></speak>]")
+          }
+        }
+      }
+
+
+
+    }
+    else-if (size(launch) == 1) {
+      choose (Random) {
+        template ("#{value(launch.name)}")
+      }
+    }
+  }
+}
+template-macro-def (rocket) {
+  params {
+    param (rocket) {
+      type (Rocket)
+      max (Many)
+    }
+    param (earcon) {
+      type (viv.core.Text)
+    }
+  }
+  content {
+    if (size(rocket) > 1) {
+      choose (Random) {
+        template (I found these rockets) {
+          speech ("[<speak>I found these rockets <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("I found #{size(rocket)} rockets") {
+          speech ("[<speak>I found #{size(rocket)} rockets <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("How about these #{size(rocket)} rockets") {
+          speech ("[<speak>how about these #{size(rocket)} rockets <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("I found #{size(rocket)}") {
+          speech ("[<speak>I found #{size(rocket)} <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+      }
+    }
+    else-if (size(rocket) == 1) {
+      choose (Random) {
+        template ("#{value(rocket.name)}")
+      }
+    }
+  }
+}
+template-macro-def (capsule) {
+  params {
+    param (capsule) {
+      type (Capsule)
+      max (Many)
+    }
+    param (earcon) {
+      type (viv.core.Text)
+    }
+  }
+  content {
+    if (size(capsule) > 1) {
+      choose (Random) {
+        template (I found these capsules) {
+          speech ("[<speak>I found these capsules <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("I found #{size(capsule)} capsules") {
+          speech ("[<speak>I found #{size(capsule)} capsules <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("How about these #{size(capsule)} capsules") {
+          speech ("[<speak>how about these #{size(capsule)} capsules <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+        template ("I found #{size(capsule)}") {
+          speech ("[<speak>I found #{size(capsule)} <audio src=\"#{value(earcon)}\"></audio></speak>]")
+        }
+      }
+    }
+    else-if (size(capsule) == 1) {
+      choose (Random) {
+        template ("#{value(capsule.type)}")
+      }
+    }
+  }
+}

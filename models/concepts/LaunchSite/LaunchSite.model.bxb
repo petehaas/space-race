@@ -1,0 +1,43 @@
+structure (LaunchSite) {
+  property (id) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (name) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (status) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (loc) {
+    type (geo.NamedPoint)
+    min (Required) max (One)
+  }
+  property (landingAttempts) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (successfulLandings) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (details) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (wikiLink) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+
+  
+}

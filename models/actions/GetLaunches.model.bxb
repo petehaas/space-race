@@ -1,0 +1,39 @@
+action (GetLaunches) {
+  type (Search)
+  collect {
+    input (launchId) {
+      type (FlightNumber)
+    }
+
+    input (rocketId) {
+      type (RocketId)
+    }
+
+    input (launchDate) {
+      type (LaunchDate)
+      default-select {
+        with-rule {
+          select-first
+        }
+      }
+    }
+
+    input (upcoming) {
+      type (Upcoming)
+    }
+
+    input (previous) {
+      type (Previous)
+    }
+
+
+  }
+  output (Launch) {
+    on-empty {
+      ordered-effects {
+        drop (launchDate)
+        drop (rocketId)
+      }
+    }
+  }
+}

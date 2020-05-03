@@ -1,0 +1,15 @@
+train (t-b3pbtqv3umrzrnqb1zzk2x4kj) {
+  utterance ("[g:Launch] were there any rocket launches {[g:LaunchDate] (last month)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1586914929763)
+}
+train (t-b4ny3syaie7bojkodw9enf3em) {
+  utterance ([g:Rocket#payloadWeights:continue:Rocket] how much can it carry)
+  plan (Y2BiUC3ISaxML8ovzUvRKy5ITE6t0AvKT85OLQlIrMzJT0wJT81MzyhhkMCljIERCBkYmIAYzAIA)
+  last-modified (1586879300330)
+}
+train (t-bbxs9la5x9dlkzq58chcxm9tf) {
+  utterance ([g:UserContext] take me home)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587331166162)
+}

@@ -1,0 +1,260 @@
+layout-macro-def (rocket-details) {
+  params {
+    param (rocket) {
+      type (Rocket)
+    }
+  }
+
+  content {
+    layout {
+      section {
+        content {
+          image-carousel {
+            images (rocket.images)
+          }
+
+          title-area {
+            halign (Center)
+            slot1 {
+              if (exists(rocket.name)) {
+                text {
+                  value ("#{value(rocket.name)}")
+                  style (Title_XL)
+                }
+              }
+              else {
+                single-line {
+                  spacer
+                }
+              }
+
+            }
+            slot2 {
+              single-line {
+                text {
+                  value ("First Launch")
+                  style (Detail_M_Soft)
+                }
+              }
+            }
+            slot3 {
+              if (exists(rocket.firstFlight)) {
+                single-line {
+                  text {
+                    value ("#{value(rocket.firstFlight)}")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+              else {
+                single-line {
+                  spacer
+                }
+              }
+            }
+          } // title-area
+          spacer
+
+          if (exists(rocket.description)) {
+            paragraph {
+              value ("#{value(rocket.description)}")
+              style (Detail_L)
+            }
+          }
+          spacer
+          spacer
+
+          title-area {
+            halign (Center)
+            slot2 {
+              single-line {
+                text {
+                  value ("First Stage")
+                  style (Detail_L_Soft)
+                }
+              }
+            }
+          }
+          hbox {
+            content {
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Engines")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.firstStage.engines)) {
+                    single-line {
+                      text {
+                        value ("#{rocket.firstStage.engines}")
+                      }
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Fuel Amount (tons)")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.firstStage.fuelAmountTons)) {
+                    single-line {
+                      text {
+                        value ("#{rocket.firstStage.fuelAmountTons}")
+                      }
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Reusable")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.firstStage.reusable)) {
+
+                    if (rocket.firstStage.reusable) {
+                      single-line {
+                        text {
+                          value ("Yes")
+                        }
+                      }
+                    }
+                    else {
+                      single-line {
+                        text {
+                          value("No")
+                          
+                        }
+                      }
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          divider
+
+          title-area {
+            halign (Center)
+            slot2 {
+              single-line {
+                text {
+                  value ("Second Stage")
+                  style (Detail_L_Soft)
+                }
+              }
+            }
+          }
+          hbox {
+            content {
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Engines")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.secondStage.engines)) {
+                    single-line {
+                      text {
+                        value ("#{rocket.secondStage.engines}")
+                      }
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Fuel Amount (tons)")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.secondStage.fuelAmountTons)) {
+                    single-line {
+                      text {
+                        value ("#{rocket.secondStage.fuelAmountTons}")
+                      }
+                    }
+                  }
+                }
+              } // vbox
+              vbox {
+                content {
+                  single-line {
+                    text {
+                      value ("Reusable")
+                      style (Detail_M_Soft)
+                    }
+                  }
+                  if (exists(rocket.secondStage.reusable)) {
+                    single-line {
+                      text {
+                        value ("#{rocket.secondStage.reusable}")
+                      }
+                    }
+                  }
+                }
+              } // vbox
+            }
+          } // hbox
+
+          cell-card {
+
+            on-click {
+              intent {
+                goal: RocketEngine
+                value: $expr (rocket.engine.number)
+                value: $expr (rocket)
+              }
+            }
+            slot1 {
+              image {
+                shape (Circle)
+                url (images/icons/rocket-logo-01.png)
+              }
+            }
+            slot2 {
+
+              content {
+                primary {
+                  if (exists(rocket.engine.type)) {
+                    template ("#{title(value(rocket.engine.type))} engine")
+
+                  }
+                  else {
+                    template ()
+                  }
+                }
+                secondary {
+                  template ("More info")
+                }
+              }
+            }
+          }
+
+          spacer
+          if (exists(rocket.wikiLink)) {
+            attribution-link {
+
+              url ("#{value(rocket.wikiLink)}")
+              label (Wikipedia)
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+structure (RocketPayloadWeight) {
+ 
+  property (id) {
+    type (RocketPayloadWeightId)
+    min (Required) max (One)
+  }
+
+  property (name) {
+    type (RocketPayloadWeightName)
+    min (Required) max (One)
+  }
+
+   property (kg) {
+    type (RocketPayloadWeightKg)
+    min (Required) max (One)
+  }
+
+   property (lb) {
+    type (RocketPayloadWeightLb)
+    min (Required) max (One)
+  }
+}

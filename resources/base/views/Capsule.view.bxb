@@ -1,0 +1,161 @@
+result-view {
+  match: Capsule (this) {
+
+  }
+
+   message {
+    template-macro (capsule) {
+      param (capsule) {
+        expression (this)
+      }
+      param (earcon) {
+        literal (https://petehaas.s3.amazonaws.com/audio/Bixby/Spacex/Capsule-Earcon.wav)
+      }
+    }
+  }
+
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        where-each (capsule) {
+          cell-card {
+            slot1 {
+              image {
+                url (images/icons/dragon1.jpg)
+                shape (Circle)
+              }
+            }
+            slot2 {
+              content {
+                primary {
+                  template ("#{value(capsule.type)}")
+                }
+                secondary {
+                  template ("Original launch:  #{truncate(value(capsule.originalLaunchDate),10)}")
+                }
+              }
+            }
+          }
+        }
+      }
+    } // picklist
+    else {
+      layout {
+        section {
+          content {
+            image {
+              url ("images/icons/dragon2.jpg")
+            }
+            title-area {
+              halign (Center)
+              slot2 {
+                single-line {
+                  text {
+                    value ("#{value(this.type)}")
+                    style (Title_S)
+                  }
+                }
+              }
+            }
+            spacer
+
+            paragraph {
+              value ("#{value(this.details)}")
+              style (Detail_L_Soft)
+            }
+            spacer
+
+            divider
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value ("Landings")
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.landings)}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value ("Status")
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.status)}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value ("Re-uses")
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.reuseCount)}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+              }
+            }
+            spacer
+            spacer
+            title-area {
+              slot2 {
+                single-line {
+                  text {
+                    value ("Missions")
+                    style (Detail_L_Soft)
+                  }
+                }
+              }
+            }
+
+            for-each (this.missions) {
+              as (mission) {
+                cell-card {
+                  on-click {
+                    intent {
+                      goal: Launch
+                      value-set: FlightNumber {
+                        $expr (mission.flight)
+                      }
+                    }
+                  }
+                  slot2 {
+                    content {
+                      primary {
+                        template ("#{value(mission.name)}")
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

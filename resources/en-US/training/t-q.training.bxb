@@ -1,0 +1,20 @@
+train (t-q7dbjfwlujq2uhhlazcx2dmm9) {
+  utterance ([g:UserContext] home base)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587331145266)
+}
+train (t-qk9zh6w61ts0j3gzxoj8p7a8j) {
+  utterance ([g:Rocket#successRate:continue:Rocket] whats the success rate)
+  plan (Y2BiUC7ISaxML8ovzUvRKy5ITE6t0AvKT85OLQkuTU5OLS4OSixJZZDApYiBEQgZGJiAGMwCAA==)
+  last-modified (1586950456690)
+}
+train (t-qr4bnm4e4rlpwod35t775n7w2) {
+  utterance ("[g:Rocket] tell me about the (falcon heavy)[v:RocketId]")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWGQwZRxTy2BSBYzSOHS55nCwMTACMQMQJKRAQSYIBgA)
+  last-modified (1587007300442)
+}
+train (t-qumuhvp5n3locpwyibm017ec3) {
+  utterance ([g:Rocket#mass:continue:Rocket] weight)
+  plan (Y2BikCnISaxML8ovzUvRKy5ITE6t0AvKT85OLfFNLC5mkMAly8AIhAwMTEAMZgEA)
+  last-modified (1586913520716)
+}

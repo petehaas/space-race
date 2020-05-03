@@ -1,0 +1,65 @@
+layout-macro-def (launch-card) {
+  params {
+    param (launch) {
+      type (Launch)
+      min (Required)
+    }
+  }
+
+  content {
+       if (exists(launch.images[0].url)) {
+               image-card {
+                 
+                image-url("#{value(launch.images[0].url)}")
+                
+                image-object-fit (Contain)
+                aspect-ratio(One_One)
+                text-position (Below)
+                column-size (Two)
+                  title-area {
+                    halign (Center)
+                  slot2 {
+                    paragraph {
+                      value("#{value(launch.name)}")
+                      style(Title_XS)
+                    }
+                  }
+                  slot3 {
+                    paragraph {
+                      value("#{value(launch.launchDate)}")
+                      style(Detail_M_Soft)
+                    }
+                  }
+                }
+            
+          }
+          }
+          // else {
+          //     image-card {
+                 
+          //       image-url("images/icons/rocket-logo-01.png")
+                
+          //       image-object-fit (Contain)
+          //       aspect-ratio(One_One)
+          //       text-position (Below)
+          //       column-size (One)
+          //         title-area {
+          //           halign (Center)
+          //         slot2 {
+          //           paragraph {
+          //             value("#{value(launch.name)}")
+          //             style(Title_XS)
+          //           }
+          //         }
+          //         slot3 {
+          //           paragraph {
+          //             value("#{value(launch.launchDate)}")
+          //             style(Detail_M_Soft)
+          //           }
+          //         }
+          //       }
+            
+          // }
+          // }
+  }
+}

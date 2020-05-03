@@ -1,0 +1,25 @@
+train (t-z5kigcg992gvd3snzagz21rp0) {
+  utterance ("[g:Rocket] tell me aout the (falcon9)[v:RocketId] rocket")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWGQwZRxTy2BSBYzSOHS55nCwMTACMQMQJKRAQSYIBgA)
+  last-modified (1587006464565)
+}
+train (t-zhajpvi6x5673oe7itgf2elvc) {
+  utterance ([g:UserContext] hello)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587325640401)
+}
+train (t-zjipuud67dmhoi9vbxg7jq934) {
+  utterance ("[g:Launch] show (upcoming)[v:Upcoming:true] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosiEFiTn52bmpTMwMTACMQOQZGQAASYIBgA=)
+  last-modified (1588014722275)
+}
+train (t-zkt9io0ote9cgn88ewbs2xkk5) {
+  utterance ([g:Info] who owns spacex)
+  plan (Y2BkEEwuLSpL1SsuSExOrdDzzEvLZwABRhABAA==)
+  last-modified (1587338130107)
+}
+train (t-zqh56ey634nkw635eo1d2ei5c) {
+  utterance ([g:Rocket] rocket)
+  plan (Y2BkEE4uLSpL1SsuSExOrdALyk/OTi1hAAFGEAEA)
+  last-modified (1587515564515)
+}

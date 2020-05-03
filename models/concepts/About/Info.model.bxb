@@ -1,0 +1,67 @@
+structure (Info) {
+
+  property (founder) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (founded) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (employees) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (launchSites) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (testSites) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (ceo) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (cto) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (coo) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (ctoPropulsion) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (valuation) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (headQuarters) {
+    type (HeadQuarters)
+    min (Required) max (One)
+  }
+  property (summary) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (website) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+}

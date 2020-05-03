@@ -1,0 +1,65 @@
+structure (Ship) {
+ 
+  property (id) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (name) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (model) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (type) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (active) {
+    type (viv.core.Boolean)
+    min (Required) max (One)
+    visibility (Private)
+  }
+   property (imo) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (mmsi) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (abs) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (class) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (weight) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (built) {
+    type (viv.core.Integer)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (port) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+
+ 
+}

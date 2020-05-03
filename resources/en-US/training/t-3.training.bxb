@@ -1,0 +1,25 @@
+train (t-33t3fe8gbcs3nb2qhk8336ujv) {
+  utterance ("[g:Launch] show launches {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1587006605148)
+}
+train (t-34dd0e01xp9a9zwtg9wir8thv) {
+  utterance ([g:LaunchSite] launch sites)
+  plan (Y2BkEE8uLSpL1SsuSExOrdDzSSzNS84IzixJZQABRhABAA==)
+  last-modified (1588013585994)
+}
+train (t-364l1igba2ho08s0rd1sunic7) {
+  utterance ([g:Launch] test)
+  plan (Y2BkEE4uLSpL1SsuSExOrdDzSSzNS85gAAFGEAEA)
+  last-modified (1588504672614)
+}
+train (t-3nsgk9orl0pq0v0u8xbu4l3gj) {
+  utterance ([g:Launch] show spacex launches)
+  plan (Y2BkEE4uLSpL1SsuSExOrdDzSSzNS85gAAFGEAEA)
+  last-modified (1587331132215)
+}
+train (t-3t79qxt0y3atlkpxast5ym29q) {
+  utterance ([g:Capsule] list capsules)
+  plan (Y2BkEEkuLSpL1SsuSExOrdBzTiwoLs1JZQABRhABAA==)
+  last-modified (1587349348543)
+}

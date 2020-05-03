@@ -1,0 +1,39 @@
+structure (Payload) {
+ 
+  property (id) {
+    type (PayloadId) 
+    min (Required) max(One)
+  }
+   property (customers) {
+    type (viv.core.Text) 
+    min (Optional) max(Many)
+    visibility (Private)
+  }
+  property (nation) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+  property (manufacturer) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+  property (type) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+  property (kg) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+  property (lb) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+  property (orbit) {
+    type (viv.core.Text)
+   visibility (Private)
+  }
+
+
+
+}

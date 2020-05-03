@@ -1,0 +1,25 @@
+train (t-2mcbsn2u0205f30mjtd8e5ixd) {
+  utterance ("[g:Launch] (falcon heavy)[v:RocketId] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosgE5Sdnp5Z4pjAwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587515210655)
+}
+train (t-2mjznxyuvuytp9w764whr0nnf) {
+  utterance ("[g:Launch:continue] filter by {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIY1HukliSyiBdllmmV5KZm6oH4oYAGa4VBUWpxcWZ+XkMzAyMDExAkgFMMwJpFiAG8ZkgcgA=)
+  last-modified (1587515206753)
+}
+train (t-2pufa4wpgaoid4p6nu8mf2eh9) {
+  utterance ([g:UserContext] start)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587515202869)
+}
+train (t-2xjlmf8siw0z8j78e5wjwlfzr) {
+  utterance ([g:UserContext] get started)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587339085599)
+}
+train (t-2zf3gmhe3ioshb5srtc3q5di0) {
+  utterance ("[g:Launch] show launches for the (falcon9)[v:RocketId]")
+  plan (Y2BmkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM0hhSgflJ2enlnimMDAxMAIxA5BkZAABJggGAA==)
+  last-modified (1586898703485)
+}

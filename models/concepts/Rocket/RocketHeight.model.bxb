@@ -1,0 +1,12 @@
+structure (RocketHeight) {
+ 
+  property (meters) {
+    type (RocketHeightMeters)
+    min (Required) max (One)
+  }
+
+  property (feet) {
+    type (RocketHeightFeet)
+    min (Required) max (One)
+  }
+}

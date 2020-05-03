@@ -1,0 +1,20 @@
+train (t-k1s3g7iz4ezmfrl8d202w2gie) {
+  utterance ([g:Info] about the company)
+  plan (Y2BkEEwuLSpL1SsuSExOrdDzzEvLZwABRhABAA==)
+  last-modified (1587338139677)
+}
+train (t-krgz35eu54us6olujildg3aby) {
+  utterance ([g:UserContext] tell me about space)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587337997028)
+}
+train (t-kta8vow3yrk101joly2bdbjm5) {
+  utterance ("[g:Rocket] new (starship)[v:RocketId]")
+  plan (Y2BmEE4uLSpL1SsuSExOrdALyk/OTi1hEEcRdE8tgYgXM4hiUe2ZwsDEwAjEDECSkQEEmCAYAA==)
+  last-modified (1588015414826)
+}
+train (t-kvhhsq276pi8gptefr4huvi1u) {
+  utterance ([g:UserContext] how does this work)
+  plan (Y2BkkEguLSpL1SsuSExOrdALLU4tcs7PK0mtKGEAAUYQAQA=)
+  last-modified (1587337949737)
+}

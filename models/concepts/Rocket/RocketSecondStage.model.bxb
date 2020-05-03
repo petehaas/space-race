@@ -1,0 +1,3 @@
+structure (RocketSecondStage) {
+ role-of (RocketStage)
+}

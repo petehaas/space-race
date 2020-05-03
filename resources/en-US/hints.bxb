@@ -1,0 +1,9 @@
+hints {
+  uncategorized {
+    hint (Start Space Race)
+    hint (Ask Space Race to begin)
+    hint (With Space Race, show all launches)
+    hint (In Space Race, tell me about the new Starship spacecraft)
+    hint (Show Falcon Heavy launches in Space Race)
+  }
+}

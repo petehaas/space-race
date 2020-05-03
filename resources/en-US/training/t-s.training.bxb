@@ -1,0 +1,10 @@
+train (t-s5ujqqp6btj49jirkjn678aok) {
+  utterance ([g:Rocket] list rockets)
+  plan (Y2BkkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWEAAUYQAQA=)
+  last-modified (1586915912894)
+}
+train (t-spwo9jo6b922g0rsjmdqix85n) {
+  utterance ("[g:Launch] (upcoming)[v:Upcoming:true] launches")
+  plan (Y2BmEE4uLSpL1SsuSExOrdDzSSzNS85gkEARdE8tgYinFjOIosiEFiTn52bmpTMwMTACMQOQZGQAASYIBgA=)
+  last-modified (1587515497475)
+}

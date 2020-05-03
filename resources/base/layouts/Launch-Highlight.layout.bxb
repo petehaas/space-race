@@ -1,0 +1,64 @@
+layout-macro-def (launch-highlight) {
+  params {
+    param (launch) {
+      type (Launch)
+      min (Required)
+    }
+  }
+
+  content {
+    if (exists(launch.images[0].url)) {
+
+      compound-card {
+        content {
+          thumbnail-area {
+            image-url {
+              if (exists(launch.images[0].url)) {
+                template ("#{value(launch.images[0].url)}")
+              }
+            }
+            title-area {
+              halign (Center)
+              slot1 {
+                text {
+                  value ("#{value(launch.name)}")
+                  style (Title_L)
+                }
+              }
+              slot2 {
+                paragraph {
+                  value ("#{value(launch.launchDate)}")
+                  style (Detail_L_Soft)
+                }
+              }
+              slot3 {
+                single-line {
+                  if (launch.success) {
+                    text {
+                      value ("Success")
+                      style (Detail_M)
+                      color (Green)
+                    }
+                  }
+                  else {
+                    text {
+                      value ("failed")
+                      style (Detail_L_Soft)
+                    }
+                    spacer
+                    spacer
+                    image {
+                      url (images/icons/rocket-fail.png)
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

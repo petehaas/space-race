@@ -1,0 +1,20 @@
+train (t-p041xv8t75pt5bqbtqffzxh2u) {
+  utterance ([g:Rocket#height:continue:Rocket] how tall is it)
+  plan (Y2BikCvISaxML8ovzUvRKy5ITE6t0AvKT85OLfFIzUzPKGGQwCXPwAiEDAxMQAxmAQA=)
+  last-modified (1586901907243)
+}
+train (t-p163g298qecl9bghi6e8kzf5g) {
+  utterance ([g:Capsule] show dragon capsules)
+  plan (Y2BkEEkuLSpL1SsuSExOrdBzTiwoLs1JZQABRhABAA==)
+  last-modified (1587513156705)
+}
+train (t-peuoi6nbdlwr3gcroukmjeotz) {
+  utterance ([g:Rocket:continue] list rockets)
+  plan (Y2BkkCjISaxML8ovzUvRKy5ITE6t0AvKT85OLWEAAUYQAQA=)
+  last-modified (1586915994495)
+}
+train (t-pfgl2dm7j6tgro21xtfvz9701) {
+  utterance ("[g:Launch] launches {[g:LaunchDate] (this year)[v:time.DateTimeExpression]}")
+  plan (Y2BhkCjISaxML8ovzUvRKy5ITE6t0PNJLM1LzmCQxZRxTy2BSKYWM8jg0uiSWJLKIF2WWaZXkpmbqgfihgAZrhUFRanFxZn5eQzMDIwMTECSAUwzAmkWIAbxmSByAA==)
+  last-modified (1586904304228)
+}

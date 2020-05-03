@@ -1,0 +1,195 @@
+layout-macro-def (launch-details) {
+  params {
+    param (launch) {
+      type (Launch)
+      min (Required)
+      max (One)
+    }
+  }
+  content {
+    layout {
+      section {
+        content {
+          if (size(launch.images) > 2) {
+            image-carousel {
+              images (launch.images)
+            }
+          }
+          else-if (launch.upcoming) {
+            if (size(launch.images) == 2) {
+              image {
+                object-fit (Cover)
+                url ("[#{value(launch.images[0].url)}]")
+              }
+            }
+            else {
+              image {
+                object-fit (Cover)
+                url ("images/icons/rocket-logo-01.png")
+              }
+            }
+            title-area {
+              halign (Center)
+              slot2 {
+                single-line {
+                  text {
+                    value ("Upcoming launch")
+                    style (Title_S)
+                  }
+                }
+              }
+            }
+          }
+          else-if (exists(launch.images[0].url)) {
+            video {
+              poster ("#{value(launch.images[0].url)}")
+              youtube {
+                video-id ("#{value(launch.videoLink)}")
+              }
+            }
+          }
+          spacer
+          spacer
+          spacer
+
+          thumbnail-area {
+
+            image-url ("[#{value(launch.images[0].url)}]")
+            image-object-fit (Cover)
+            image-aspect-ratio (Three_Four)
+            image-shape (Circle)
+            title-area {
+              slot2 {
+                paragraph {
+                  value ("#{value(launch.name)}")
+                  style (Title_M)
+                }
+              }
+              slot3 {
+                single-line {
+                  if (exists(launch.rocket)) {
+                    text {
+                      value ("#{value(launch.launchDate)}")
+                    }
+                  }
+                  else {
+                    spacer
+                  }
+                }
+              }
+            }
+          }
+          divider
+          spacer
+          if (exists(launch.success) && launch.success) {
+            title-area {
+              halign (End)
+              slot2 {
+                single-line {
+                  if (launch.upcoming) {
+                    text {
+                      value ("Upcoming Launch")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  else {
+                    text {
+                      value ("Successful Launch")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  spacer
+                  if (launch.upcoming == true) {
+                    image {
+                      shape (Circle)
+                      url (images/icons/rocket-retired.png)
+                    }
+                  }
+                  else {
+                    image {
+                      url (images/icons/rocket-success.png)
+                      style (Title_S)
+                    }
+                  }
+                }
+              }
+            }
+          }
+          else {
+            title-area {
+              halign (End)
+              slot2 {
+                single-line {
+                  text {
+                    value ("Launch Failed")
+                    style (Detail_L)
+                  }
+                  spacer
+                  image {
+                    url (images/icons/rocket-fail.png)
+                    style (Title_S)
+                  }
+                }
+              }
+            }
+
+          }
+
+          spacer
+          spacer
+
+          if (exists(launch.details) && launch.details != 'N/A') {
+            paragraph {
+              value ("#{value(launch.details)}")
+            }
+          }
+
+          spacer
+          divider
+
+          cell-card {
+
+            on-click {
+              intent {
+                goal: Rocket
+                value: $expr (launch.rocket.id)
+              }
+            }
+            slot1 {
+              image {
+                shape (Circle)
+                url (images/icons/rocket-logo-01.png)
+              }
+            }
+            slot2 {
+
+              content {
+                primary {
+                  if (exists(launch.rocket.name)) {
+                    template ("#{value(launch.rocket.name)}")
+
+                  }
+                }
+                secondary {
+                  template ("More info")
+                }
+              }
+            }
+          }
+
+          spacer
+          attribution-link {
+
+            url ("#{value(launch.wikiLink)}")
+            label (Wikipedia)
+          }
+
+          // else {
+          //   paragraph (No content)
+          // }
+
+        }
+      }
+    }
+  }
+}

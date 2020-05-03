@@ -1,0 +1,238 @@
+result-view {
+
+  match: _ (property) {
+    from-property: Rocket (rocket)
+    max (Many)
+  }
+  conversation-drivers {
+    conversation-driver {
+      choose (Random) {
+        template ("Menu")
+        template ("Home")
+        template ("#{value(rocket.name)} launches")
+        template ("#{value(rocket.name)} launches this year")
+        template ("#{value(rocket.name)} launches last year")
+      }
+    }
+    conversation-driver {
+      choose (Random) {
+        template (Cost per launch)
+        template (Weight)
+        template (Height)
+        template (What's the success rate?)
+        template (How much can it carry?)
+        template (How much can it lift?)
+        template (How tall is it?)
+      }
+    }
+  }
+  message {
+    if (test:instanceOf(property,'curve.spacex.CostPerLaunch')) {
+      template ("The cost per launch is #{value(property)} million dollars")
+    }
+    else-if (test:instanceOf(property,'curve.spacex.RocketSuccessRate')) {
+
+      if (size(property) == 1 && property == 0) {
+        template ("There is no reported success rate")
+      }
+      else {
+        template ("It has a success rate of #{value(property)}%")
+      }
+    }
+    else-if (test:instanceOf(property,'curve.spacex.RocketPayloadWeight')) {
+      template ("#{value(rocket.name)} can carry various weights depending on the mission")
+    }
+    else-if (test:instanceOf(property,'curve.spacex.RocketMass')) {
+      template ("#{value(rocket.name)} has a mass of #{integer(rocket.mass.lb)} lbs")
+    }
+    else-if (test:instanceOf(property,'curve.spacex.RocketHeight')) {
+      template ("It's #{integer(rocket.height.feet)} feet tall")
+    }
+
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          image-list {
+            images (rocket.images)
+          }
+
+          title-area {
+            slot2 {
+              single-line {
+                text {
+                  value ("#{value(rocket.name)}")
+                  style (Title_S)
+                  color (Amber)
+                }
+              }
+            }
+          }
+
+          spacer
+          spacer
+          spacer
+
+          if (test:instanceOf(property,'curve.spacex.RocketPayloadWeight')) {
+            if (exists(rocket.payloadWeights[0])) {
+
+              title-area {
+                halign (Center)
+                slot1 {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.payloadWeights[0].name)}")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                slot2 {
+                  single-line {
+                    text {
+                      value ("#{integer(rocket.payloadWeights[0].lb)}lbs")
+                      style (Title_M)
+                    }
+                  }
+                }
+              }
+            }
+            if (exists(rocket.payloadWeights[1])) {
+              divider
+              title-area {
+                halign (Center)
+                slot1 {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.payloadWeights[1].name)}")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+                slot2 {
+                  single-line {
+                    text {
+                      value ("#{integer(rocket.payloadWeights[1].lb)}lbs")
+                      style (Title_M)
+                    }
+                  }
+                }
+              }
+            }
+            if (exists(rocket.payloadWeights[2])) {
+              divider
+              title-area {
+                halign (Center)
+                slot1 {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.payloadWeights[2].name)}")
+                      style (Detail_L_Soft)
+                    }
+                  }
+
+                }
+                slot2 {
+                  single-line {
+                    text {
+                      value ("#{integer(rocket.payloadWeights[2].lb)}lbs")
+                      style (Title_M)
+                    }
+                  }
+
+                }
+              }
+            }
+            if (exists(rocket.payloadWeights[3])) {
+              divider
+              title-area {
+                halign (Center)
+                slot1 {
+                  single-line {
+                    text {
+                      value ("#{value(rocket.payloadWeights[3].name)}")
+                      style (Detail_L_Soft)
+                    }
+                  }
+
+                }
+                slot2 {
+                  single-line {
+                    text {
+                      value ("#{integer(rocket.payloadWeights[3].lb)}lbs")
+                      style (Title_M)
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          title-area {
+            halign (Center)
+            slot2 {
+              if (test:instanceOf(property,'curve.spacex.CostPerLaunch')) {
+                single-line {
+                  text {
+                    value ("#{value(property)}M")
+                    style (Title_XL_Soft)
+                  }
+                }
+              }
+              else-if (test:instanceOf(property,'curve.spacex.RocketSuccessRate')) {
+                if (size(property) == 1 && property == 0) {
+                  single-line {
+                    text {
+                      value ("N/A")
+                      style (Title_XL_Soft)
+                    }
+                  }
+                }
+                else {
+                  single-line {
+                    text {
+                      value ("#{value(property)}%")
+                      style (Title_XXL_Soft)
+                    }
+                  }
+                }
+              }
+              else-if (exists(rocket.mass.lb) && test:instanceOf(property,'curve.spacex.RocketMass')) {
+                single-line {
+                  text {
+                    value ("#{integer(rocket.mass.lb)}lbs")
+                    style (Title_XL_Soft)
+                  }
+                }
+              }
+              else-if (exists(rocket.height.feet) && test:instanceOf(property,'curve.spacex.RocketHeight')) {
+                single-line {
+                  text {
+                    value ("#{integer(rocket.height.feet)}ft")
+                    style (Title_XXL_Soft)
+                  }
+                }
+              }
+              else {
+                single-line {
+                  //text("NO MATCH")
+                  spacer
+                }
+              }
+            }
+          }
+
+            spacer
+          if (exists(rocket.wikiLink)) {
+            attribution-link {
+
+              url ("#{value(rocket.wikiLink)}")
+              label ("[#{value(rocket.name)} on] Wikipedia")
+            }
+          }
+        } // content
+      }
+    }
+  }
+}

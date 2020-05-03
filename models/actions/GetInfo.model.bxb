@@ -1,0 +1,4 @@
+action (GetInfo) {
+ type(Search)
+  output (Info)
+}

@@ -1,0 +1,227 @@
+result-view {
+  match: LaunchSite (this)
+
+  message {
+    if (size(this) > 1) {
+      choose (Random) {
+        template (I found these launch sites)
+        template ("#{size(this)} sites found")
+        template ("I found #{size(this)} launch sites")
+      }
+    }
+    else {
+      template ("#{value(this.name)}")
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      choose (Random) {
+        template (Menu)
+      }
+    }
+  }
+
+
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        where-each (site) {
+          compound-card {
+            content {
+              hbox {
+                content {
+                  vbox {
+                    content {
+                      single-line {
+                        text {
+                          value (Attempts)
+                          style (Detail_M_Soft)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value ("#{value(site.landingAttempts)}")
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  } // vbox
+                  vbox {
+                    content {
+                      single-line {
+                        text {
+                          value (Successfull)
+                          style (Detail_M_Soft)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value ("#{value(site.successfulLandings)}")
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  } // vbox
+                  vbox {
+                    content {
+                      single-line {
+                        text {
+                          value (Status)
+                          style (Detail_M_Soft)
+                        }
+                      }
+                      single-line {
+                        text {
+                          value ("#{title(value(site.status))}")
+                          style (Detail_M)
+                        }
+                      }
+                    }
+                  } // vbox
+                }
+              }
+              map-card {
+                zoom (11)
+                aspect-ratio (TwentyOne_Nine)
+                title-area {
+                  slot2 {
+                    single-line {
+                      text {
+                        value ("#{value(site.name)}")
+                      }
+                    }
+                  }
+                }
+                markers {
+                  marker {
+                    geo (site.loc.point)
+                    icon ("/images/icons/rocket-success.png")
+                    width (15)
+                    height (20)
+                    anchor-x (5)
+                    anchor-y (15)
+                    rotation (0)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      layout {
+        section {
+          content {
+            map-card {
+              title-area {
+                slot2 {
+                  single-line {
+                    text {
+                      value ("#{value(this.name)}")
+                    }
+                  }
+                }
+              }
+              markers {
+                marker {
+                  geo (this.loc.point)
+                  icon ("/images/icons/rocket-success.png")
+                  width (25)
+                  height (40)
+                  anchor-x (15)
+                  anchor-y (15)
+                  rotation (0)
+                }
+              }
+            }
+            divider
+            title-area {
+              halign (Center)
+              slot2 {
+                paragraph {
+                  value ("#{value(this.name)}")
+                  style (Title_XS)
+                }
+              }
+            }
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value (Attempts)
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.landingAttempts)}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value (Successfull)
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.successfulLandings)}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+                vbox {
+                  content {
+                    single-line {
+                      text {
+                        value (Status)
+                        style (Detail_L_Soft)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{title(value(this.status))}")
+                        style (Detail_L)
+                      }
+                    }
+                  }
+                } // vbox
+              }
+            }
+            spacer
+            spacer
+            divider
+            spacer
+            spacer
+
+            paragraph {
+              value ("#{value(this.details)}")
+              style (Detail_L_Soft)
+            }
+            attribution-link {
+              label {
+                template ("More on Wikipedia")
+              }
+              url {
+                template ("[#{value(this.wikiLink)}]")
+              }
+            }
+
+
+
+          }
+        }
+      }
+    }
+  }
+}

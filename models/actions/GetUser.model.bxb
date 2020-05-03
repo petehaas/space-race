@@ -1,0 +1,28 @@
+action (GetUser) {
+  type (Calculation)
+
+  collect {
+
+    input (previousUser) {
+      type (PreviousUser)
+      min (Optional)
+      max (One)
+      
+    }
+
+    input (numberOfTurns) {
+      type (NumberOfTurns)
+      min (Required)
+      max (One)
+      default-init {
+        intent {
+          goal: NumberOfTurns
+          value: NumberOfTurns(0)
+        }
+      }
+    }
+
+
+  }
+  output (User)
+}
